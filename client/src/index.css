@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #0a0d14;
+    --card-bg: #121722;
+    --table-green: #0d3822;
+    --table-border: #1a5e38;
+    --gold-primary: #f59e0b;
+    --gold-accent: #fbbf24;
+    --poker-red: #ef4444;
+    --poker-blue: #3b82f6;
+  }
+
+  body {
+    background-color: var(--bg-dark);
+    color: #f3f4f6;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Custom Utilities for Luxury Poker Theme */
+.felt-gradient {
+  background: radial-gradient(circle at center, #155734 0%, #0d3822 65%, #072214 100%);
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+.active-turn-pulse {
+  animation: turnPulse 1.5s infinite alternate;
+}
+
+@keyframes turnPulse {
+  0% {
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.5), 0 0 0 2px rgba(245, 158, 11, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.9), 0 0 0 4px rgba(251, 191, 36, 1);
+  }
+}
+
+/* Glassmorphic Cards */
+.glass-panel {
+  background: rgba(18, 23, 34, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(26, 33, 48, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d14;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #374151;
+}
